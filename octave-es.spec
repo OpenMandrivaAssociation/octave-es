@@ -15,7 +15,7 @@ Url:		http://octave.sourceforge.net/es/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Conflicts:	octave-forge <= 20090607
 Requires:	octave >= 2.9.9
-BuildRequires:	octave-devel >= 2.9.9
+BuildRequires:	octave-devel >= 2.9.9, MesaGL-devel, MesaGLU-devel
 
 %description
 This package provides support for the construction of Spanish language
