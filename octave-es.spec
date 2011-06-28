@@ -8,6 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	%{pkgname}-%{version}.tar.gz
+Patch0:		es-compile-0.0.4.patch
 License:	GPLv2+
 Group:		Sciences/Mathematics
 Url:		http://octave.sourceforge.net/es/
@@ -22,7 +23,9 @@ translations of Octave functions.
 
 %prep
 %setup -q -c %{pkgname}-%{version}
-cp %SOURCE0 .
+tar zxf %SOURCE0 
+%patch0 -p0
+tar zcvf %{pkgname}-%{version}.tar.gz %{pkgname}
 
 %install
 rm -rf %{buildroot}
@@ -32,7 +35,6 @@ export OCT_PREFIX=%{buildroot}%{_datadir}/octave/packages
 export OCT_ARCH_PREFIX=%{buildroot}%{_libdir}/octave/packages
 octave -q --eval "pkg prefix $OCT_PREFIX $OCT_ARCH_PREFIX; pkg install -verbose -nodeps -local %{pkgname}-%{version}.tar.gz"
 
-tar zxf %SOURCE0 
 mv %{pkgname}/COPYING .
 mv %{pkgname}/DESCRIPTION .
 
