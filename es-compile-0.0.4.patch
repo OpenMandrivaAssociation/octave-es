@@ -1,0 +1,29 @@
+--- es/src/help.icc.bak	2011-06-28 19:33:49.000000000 +0200
++++ es/src/help.icc	2011-06-28 20:24:44.000000000 +0200
+@@ -68,7 +68,7 @@
+     {
+       os.flush ();
+ 
+-      std::string tmp_file_name = file_ops::tempnam ("", "");
++      std::string tmp_file_name = octave_tempnam ("", "");
+ 
+       int cols = command_editor::terminal_cols ();
+ 
+@@ -125,7 +125,7 @@
+ 	      warning ("%s:\n\n%s\n\n", HELP_STRING, msg.c_str ());
+ 	    }
+ 
+-	  file_ops::unlink (tmp_file_name);
++	  octave_unlink (tmp_file_name);
+ 	}
+       else
+ 	os << msg;
+@@ -140,7 +140,7 @@
+   std::string h;
+ 
+   std::string file = octave_env::make_absolute
+-    (load_path::find_file (nm + LANG_EXT), octave_env::getcwd ());
++    (load_path::find_file (nm + LANG_EXT), octave_env::get_current_directory ());
+ 
+   if (! file.empty ())
+     {
