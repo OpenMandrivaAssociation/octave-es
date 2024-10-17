@@ -11,7 +11,7 @@ Source0:	%{pkgname}-%{version}.tar.gz
 Patch0:		es-compile-0.0.4.patch
 License:	GPLv2+
 Group:		Sciences/Mathematics
-Url:		http://octave.sourceforge.net/es/
+Url:		https://octave.sourceforge.net/es/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Conflicts:	octave-forge <= 20090607
 Requires:	octave >= 2.9.9
