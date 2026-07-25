@@ -1,7 +1,7 @@
 %define	pkgname es
 %define name	octave-%{pkgname}
 %define version 0.0.4
-%define release %mkrel 1
+%define release 2
 
 Summary:	Octave package for Spanish translations of functions
 Name:		%{name}
